@@ -1,0 +1,28 @@
+{
+	"name": "pipeline5",
+	"properties": {
+		"activities": [
+			{
+				"name": "Wait1",
+				"type": "Wait",
+				"dependsOn": [],
+				"userProperties": [],
+				"typeProperties": {
+					"waitTimeInSeconds": {
+						"value": "@pipeline().parameters.waitfo10sec",
+						"type": "Expression"
+					}
+				}
+			}
+		],
+		"parameters": {
+			"waitfo10sec": {
+				"type": "int",
+				"defaultValue": 10
+			}
+		},
+		"annotations": [],
+		"lastPublishTime": "2021-10-19T00:04:19Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}

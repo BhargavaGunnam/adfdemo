@@ -1,0 +1,48 @@
+{
+	"name": "pipeline4",
+	"properties": {
+		"activities": [
+			{
+				"name": "Execute Pipeline2",
+				"type": "ExecutePipeline",
+				"dependsOn": [],
+				"userProperties": [],
+				"typeProperties": {
+					"pipeline": {
+						"referenceName": "pipeline2",
+						"type": "PipelineReference"
+					},
+					"waitOnCompletion": true,
+					"parameters": {
+						"tablenamefrompipeline": {
+							"value": "@pipeline().parameters.Para1",
+							"type": "Expression"
+						},
+						"dbanamefrompipeline": {
+							"value": "@pipeline().parameters.Para2",
+							"type": "Expression"
+						},
+						"outputtablename": {
+							"value": "@pipeline().parameters.Para3",
+							"type": "Expression"
+						}
+					}
+				}
+			}
+		],
+		"parameters": {
+			"Para1": {
+				"type": "string"
+			},
+			"Para2": {
+				"type": "string"
+			},
+			"Para3": {
+				"type": "string"
+			}
+		},
+		"annotations": [],
+		"lastPublishTime": "2021-10-18T21:23:28Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}
